@@ -1,9 +1,21 @@
-import { apiUrls } from '../constants/constants'
-const axios = require ("axios");
+import { apiUrls, baseApiUrl } from '../constants/constants'
+import { getToken } from '../utils/authTokenStorage';
+const axios = require("axios");
 
-export const signupApi = (payload) => 
-    axios.post(apiUrls.signup, payload)
+const instance = axios.create({
+    baseURL: baseApiUrl,
+});
 
-export const loginApi = (payload) => 
-    axios.post(apiUrls.login, payload)
+export const signupApi = (payload) =>
+    instance.post(apiUrls.signup, payload)
 
+export const loginApi = (payload) =>
+    instance.post(apiUrls.login, payload)
+
+export const getArticleApi = (slug) =>
+    instance.get(`${apiUrls.articles}/${slug}`, {
+        headers: {
+            'Authorization': getToken(),
+        }
+
+    })

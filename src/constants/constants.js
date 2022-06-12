@@ -1,4 +1,4 @@
-const baseApiUrl = 'https://api.realworld.io/api'
+export const baseApiUrl = 'https://api.realworld.io/api'
 
 export const validationErrors = {
     REQUIRED_ERROR: 'This field is required.',
@@ -20,8 +20,9 @@ export const regexValidators = {
 }
 
 export const apiUrls = {
-    signup: baseApiUrl + '/users',
-    login: baseApiUrl + '/users/login',
+    signup: '/users',
+    login: '/users/login',
+    articles: '/articles',
 }
 
 export const routeUrls = {
@@ -30,7 +31,7 @@ export const routeUrls = {
     DASHBOARD: 'dashboard',
     PROFILE: 'profile',
     ARTICLES: 'articles',
-    ARTICLE: 'article/:id',
+    ARTICLE: 'articles/:slug',
     CREATE_ARTICLE: 'create-article',
     UPDATE_ARTICLE: 'article/:id/update',
 }

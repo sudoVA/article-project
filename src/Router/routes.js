@@ -3,6 +3,7 @@ import { AuthenticatedRoute, PublicRoute } from "../utils/routingUtils";
 import Dashboard from "../components/dashboard/dashboard";
 import LoginForm from "../components/login/login";
 import SignupForm from "../components/signUp/signUp";
+import Article from "../components/article/article";
 
 import { routeUrls } from "../constants/constants";
 
@@ -22,6 +23,10 @@ export default function Router() {
                 <Route
                     path={routeUrls.DASHBOARD}
                     element={<AuthenticatedRoute component={<Dashboard />} />}
+                />
+                <Route
+                    path={routeUrls.ARTICLE}
+                    element={<AuthenticatedRoute component={<Article />} />}
                 />
             </Routes>
         </BrowserRouter>
