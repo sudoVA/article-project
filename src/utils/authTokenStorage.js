@@ -10,3 +10,6 @@ export function removeToken() {
     localStorage.removeItem('authToken');
 }
 
+export function isTokenExist() {
+    return localStorage.getItem() ? true : false;
+}
