@@ -4,20 +4,25 @@ import Dashboard from "../components/dashboard/dashboard";
 import LoginForm from "../components/login/login";
 import SignupForm from "../components/signUp/signUp";
 
+import { routeUrls } from "../constants/constants";
+
 export default function Router() {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route
-                    path={"login"}
+                    path={routeUrls.LOGIN}
                     element={<PublicRoute component={<LoginForm />} />}
                 />
                 <Route
-                    path={"signup"}
+                    path={routeUrls.SIGNUP}
                     element={<PublicRoute component={<SignupForm />} />}
                 />
-
+                <Route
+                    path={routeUrls.DASHBOARD}
+                    element={<AuthenticatedRoute component={<Dashboard />} />}
+                />
             </Routes>
         </BrowserRouter>
     )

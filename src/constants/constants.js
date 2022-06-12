@@ -23,3 +23,20 @@ export const apiUrls = {
     signup: baseApiUrl + '/users',
     login: baseApiUrl + '/users/login',
 }
+
+export const routeUrls = {
+    LOGIN: 'login',
+    SIGNUP: 'signup',
+    DASHBOARD: 'dashboard',
+    PROFILE: 'profile',
+    ARTICLES: 'articles',
+    ARTICLE: 'article/:id',
+    CREATE_ARTICLE: 'create-article',
+    UPDATE_ARTICLE: 'article/:id/update',
+}
+
+export const navbarItems = [
+    'PROFILE',
+    'ARTICLES',
+    'CREATE_ARTICLE'
+]
