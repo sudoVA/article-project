@@ -1,0 +1,8 @@
+const authActions = {
+    USER_SIGNUP_REQUEST: 'USER_SIGNUP_REQUEST',
+    USER_SIGNUP_RESPONSE: 'USER_SIGNUP_RESPONSE',
+    USER_SIGNUP_CLEAR_STATE: 'USER_SIGNUP_CLEAR_STATE',
+  };
+  
+export default authActions;
+  
