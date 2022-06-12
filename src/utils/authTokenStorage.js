@@ -11,5 +11,5 @@ export function removeToken() {
 }
 
 export function isTokenExist() {
-    return localStorage.getItem() ? true : false;
+    return getToken() ? true : false;
 }
