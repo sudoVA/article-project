@@ -1,6 +1,6 @@
-import { loginApi } from '../../api/api';
-import loginActions from './actionTypes';
-import { setToken } from '../../utils/authTokenStorage';
+import { loginApi } from "../../api/api";
+import loginActions from "./actionTypes";
+import { setToken } from "../../utils/authTokenStorage";
 
 export const loginRequest = () => ({
   type: loginActions.LOGIN_REQUEST,
@@ -15,24 +15,23 @@ export const loginClearState = () => ({
   type: loginActions.LOGIN_CLEAR_STATE,
 });
 
-
-export const userLogin = (user) =>
-  (dispatch) => {
-    dispatch(loginRequest());
-    loginApi(user)
-      .then((response) => {
-        setToken(response?.data?.user?.token)
-        dispatch(loginResponse({
-          error: '',
-        }))
-      }).catch((error) => {
-        console.log(error.response.data.errors)
-        dispatch(
-          loginResponse({
-            error: error?.response?.data?.errors,
-          })
-        )
-      }
-
+export const userLogin = (user) => (dispatch) => {
+  dispatch(loginRequest());
+  loginApi(user)
+    .then((response) => {
+      setToken(response?.data?.user?.token);
+      dispatch(
+        loginResponse({
+          error: "",
+        })
       );
-  };
+    })
+    .catch((error) => {
+      console.log(error.response.data.errors);
+      dispatch(
+        loginResponse({
+          error: error?.response?.data?.errors,
+        })
+      );
+    });
+};

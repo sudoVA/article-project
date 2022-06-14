@@ -8,27 +8,27 @@ import Article from "../components/article/article";
 import { routeUrls } from "../constants/constants";
 
 export default function Router() {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Dashboard />} />
-                <Route
-                    path={routeUrls.LOGIN}
-                    element={<PublicRoute component={<LoginForm />} />}
-                />
-                <Route
-                    path={routeUrls.SIGNUP}
-                    element={<PublicRoute component={<SignupForm />} />}
-                />
-                <Route
-                    path={routeUrls.DASHBOARD}
-                    element={<AuthenticatedRoute component={<Dashboard />} />}
-                />
-                <Route
-                    path={routeUrls.ARTICLE}
-                    element={<AuthenticatedRoute component={<Article />} />}
-                />
-            </Routes>
-        </BrowserRouter>
-    )
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route
+          path={routeUrls.LOGIN}
+          element={<PublicRoute component={<LoginForm />} />}
+        />
+        <Route
+          path={routeUrls.SIGNUP}
+          element={<PublicRoute component={<SignupForm />} />}
+        />
+        <Route
+          path={routeUrls.DASHBOARD}
+          element={<AuthenticatedRoute component={<Dashboard />} />}
+        />
+        <Route
+          path={routeUrls.ARTICLE}
+          element={<AuthenticatedRoute component={<Article />} />}
+        />
+      </Routes>
+    </BrowserRouter>
+  );
 }
