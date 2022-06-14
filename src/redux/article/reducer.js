@@ -1,9 +1,9 @@
-import articleActions from './actionTypes';
+import articleActions from "./actionTypes";
 
 const initialState = {
   article: {},
   loading: false,
-  error: '',
+  error: "",
 };
 
 const articleReducer = (state = initialState, action) => {
@@ -12,7 +12,7 @@ const articleReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
-        error: '',
+        error: "",
       };
 
     case articleActions.ARTICLE_RESPONSE:

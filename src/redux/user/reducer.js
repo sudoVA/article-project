@@ -1,7 +1,7 @@
-import { isTokenExist } from '../../utils/authTokenStorage';
+import { isTokenExist } from "../../utils/authTokenStorage";
 
 const initialState = {
-  isAuth: isTokenExist()
+  isAuth: isTokenExist(),
 };
 
 const userReducer = (state = initialState, action) => {
@@ -9,6 +9,6 @@ const userReducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default userReducer;

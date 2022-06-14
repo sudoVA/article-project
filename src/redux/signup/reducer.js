@@ -1,8 +1,8 @@
-import authActions from './actionTypes';
+import authActions from "./actionTypes";
 
 const initialState = {
   loading: false,
-  error: '',
+  error: "",
 };
 
 const signupReducer = (state = initialState, action) => {
@@ -11,7 +11,7 @@ const signupReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
-        error: '',
+        error: "",
       };
 
     case authActions.USER_SIGNUP_RESPONSE:
