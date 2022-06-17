@@ -4,6 +4,7 @@ import Dashboard from "../components/dashboard/dashboard";
 import LoginForm from "../components/login/login";
 import SignupForm from "../components/signUp/signUp";
 import Article from "../components/article/article";
+import Articles from "../components/article/articles";
 
 import { routeUrls } from "../constants/constants";
 
@@ -28,6 +29,11 @@ export default function Router() {
           path={routeUrls.ARTICLE}
           element={<AuthenticatedRoute component={<Article />} />}
         />
+        <Route
+          path={routeUrls.ARTICLES}
+          element={<Articles />}
+        />
+
       </Routes>
     </BrowserRouter>
   );
