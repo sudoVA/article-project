@@ -1,6 +1,7 @@
 import { loginApi } from "../../api/api";
 import loginActions from "./actionTypes";
 import { setToken } from "../../utils/authTokenStorage";
+import { updateUserState } from "redux/user/actionCreators";
 
 export const loginRequest = () => ({
   type: loginActions.LOGIN_REQUEST,
@@ -22,12 +23,14 @@ export const userLogin = (user) => (dispatch) => {
       setToken(response?.data?.user?.token);
       dispatch(
         loginResponse({
-          error: "",
+          error: {},
         })
       );
+      dispatch(
+        updateUserState()
+      )
     })
     .catch((error) => {
-      console.log(error.response.data.errors);
       dispatch(
         loginResponse({
           error: error?.response?.data?.errors,

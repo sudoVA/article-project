@@ -31,7 +31,7 @@ export default function Router() {
         />
         <Route
           path={routeUrls.ARTICLES}
-          element={<Articles />}
+          element={<AuthenticatedRoute component={<Articles />} />}
         />
 
       </Routes>

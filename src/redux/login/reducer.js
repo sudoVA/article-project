@@ -2,7 +2,7 @@ import loginActions from "./actionTypes";
 
 const initialState = {
   loading: false,
-  error: "",
+  error: {},
 };
 
 const loginReducer = (state = initialState, action) => {
@@ -11,7 +11,7 @@ const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
-        error: "",
+        error: {},
       };
 
     case loginActions.LOGIN_RESPONSE:

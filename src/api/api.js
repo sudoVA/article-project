@@ -26,9 +26,9 @@ instance.interceptors.response.use(
       // redirect to login
       console.log(error.response.status);
     }
-    return error;
+    return Promise.reject(error);
   }
-)
+);
 
 export const signupApi = (payload) => instance.post(apiUrls.signup, payload);
 
