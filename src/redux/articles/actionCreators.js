@@ -22,6 +22,7 @@ export const getArticles = () => (dispatch) => {
             error: '',
             data: response.data
         }));
+        console.log(response.data,'**')
     }).catch((error) => {
         dispatch(articlesResponse({
             error: error.response.data,

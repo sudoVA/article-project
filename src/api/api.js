@@ -36,4 +36,4 @@ export const loginApi = (payload) => instance.post(apiUrls.login, payload);
 
 export const getArticleApi = (slug) => instance.get(`${apiUrls.articles}/${slug}`);
 
-export const getArticlesApi = () => instance.get(apiUrls.articles)
+export const getArticlesApi = () => instance.get(apiUrls.articles);
